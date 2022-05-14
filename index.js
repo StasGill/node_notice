@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import userRoutes from "./routes/user.js";
+import listRoutes from "./routes/list.js";
 import dotenv from "dotenv";
 
 //test
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/user", userRoutes);
+app.use("/list", listRoutes);
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
 const PORT = process.env.PORT;
