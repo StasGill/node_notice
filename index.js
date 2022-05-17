@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import userRoutes from "./routes/user.js";
 import listRoutes from "./routes/list.js";
+import taskRoutes from "./routes/task.js";
 import dotenv from "dotenv";
 
 //test
@@ -17,6 +18,7 @@ app.use(cors());
 
 app.use("/user", userRoutes);
 app.use("/list", listRoutes);
+app.use("/task", taskRoutes);
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
 const PORT = process.env.PORT;
