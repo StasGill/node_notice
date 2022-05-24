@@ -5,7 +5,7 @@ const auth = (req, res, next) => {
     const token =
       req.headers.authorization && req.headers?.authorization?.split(" ")[1];
 
-    const isCustomAuth = token.length < 500;
+    const isCustomAuth = token?.length < 500;
 
     let decodedData;
 
@@ -21,6 +21,7 @@ const auth = (req, res, next) => {
 
     next();
   } catch (error) {
+    res.status(500).json({ message: "Token is expired.", error });
     console.log(error);
   }
 };
