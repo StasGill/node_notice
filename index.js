@@ -7,7 +7,7 @@ import listRoutes from "./routes/list.js";
 import taskRoutes from "./routes/task.js";
 import dotenv from "dotenv";
 
-//test
+//test2
 
 const app = express();
 dotenv.config();
