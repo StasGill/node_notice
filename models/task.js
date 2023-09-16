@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const taskSchema = mongoose.Schema({
   title: { type: String, required: true },
-  isValid: { type: String, default: "" },
+  isValid: { type: Boolean, default: false },
   listId: { type: String, required: true },
 });
 
